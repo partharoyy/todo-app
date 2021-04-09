@@ -14,5 +14,5 @@ export default function TodoListItem({ todo, inprogress, id }) {
         db.collection("todos").doc(id).delete();
     }
 
-    <p style={pStyle} onClick={deleteTodo}>{todo}</p>
+    <p style={pStyle} onClick={deleteTodo}>{todo.todo}</p>
 }
