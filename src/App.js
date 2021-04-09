@@ -59,11 +59,6 @@ function App() {
     display: "none"
   }
 
-  const pStyle = {
-    fontSize: "20px",
-    color: "#404040",
-    marginTop: "2rem"
-  }
 
   return (
     <div className="App">
