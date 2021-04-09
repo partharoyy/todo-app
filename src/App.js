@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { db } from './firebaseConfig';
+import { db } from './firebase_config';
 import firebase from 'firebase';
 import TodoListItem from "./Todo";
 
