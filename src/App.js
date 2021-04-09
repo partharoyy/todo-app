@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { db } from './firebaseConfig';
 import firebase from 'firebase';
+import TodoListItem from "./Todo";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -75,8 +76,13 @@ function App() {
         <button type="submit" onClick={addTodo} style={buttonStyle}></button>
       </form>
       {todos.map(todo => (
-        <p style={pStyle}>{todo.todo}</p>
+        <TodoListItem
+          todo={todo.todo}
+          inprogress={todo.inprogress}
+          id={todo.id}
+        />
       ))}
+
     </div>
   );
 }
