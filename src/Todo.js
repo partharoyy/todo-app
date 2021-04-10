@@ -1,18 +1,29 @@
 import React from "react";
+import { ListItem, ListItemText, Button } from "@material-ui/core";
 import { db } from "./firebase_config";
 
-
 export default function TodoListItem({ todo, inprogress, id }) {
-
-    const pStyle = {
-        fontSize: "20px",
-        color: "#404040",
-        marginTop: "2rem"
+    function toggleInProgress() {
+        db.collection("todos").doc(id).update({
+            inprogress: !inprogress,
+        });
     }
 
-    const deleteTodo = () => {
+    function deleteTodo() {
         db.collection("todos").doc(id).delete();
     }
 
-    <p style={pStyle} onClick={deleteTodo}>{todo.todo}</p>
+    return (
+        <div style={{ display: "flex" }}>
+            <ListItem>
+                <ListItemText
+                    primary={todo}
+
+                />
+            </ListItem>
+
+
+            <Button onClick={deleteTodo}>X</Button>
+        </div>
+    );
 }
