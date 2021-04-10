@@ -18,7 +18,6 @@ export default function TodoListItem({ todo, inprogress, id }) {
             <ListItem>
                 <ListItemText
                     primary={todo}
-
                 />
             </ListItem>
 
